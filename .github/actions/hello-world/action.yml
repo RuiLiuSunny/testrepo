@@ -1,0 +1,21 @@
+name: "Hello World Action"
+description: "A simple example GitHub Action"
+author: "Your Name"
+
+inputs:
+  name:
+    description: "Name to greet"
+    required: true
+    default: "Rui"
+
+outputs:
+  greeting:
+    description: "The greeting message"
+
+runs:
+  using: "node20"
+  main: "index.js"
+
+branding:
+  icon: "smile"
+  color: "blue"

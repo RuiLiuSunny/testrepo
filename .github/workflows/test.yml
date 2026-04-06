@@ -1,0 +1,22 @@
+name: Demo Workflow Using Custom Action
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run custom Hello World action
+        id: greet_step
+        uses: ./.github/actions/hello-world
+        with:
+          name: Rui
+
+      - name: Display output from custom action
+        run: echo "The action said: ${{ steps.greet_step.outputs.greeting }}"

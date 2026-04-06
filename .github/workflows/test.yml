@@ -6,6 +6,8 @@ on:
 
 jobs:
   greet:
+    environment:
+      name: "Development"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

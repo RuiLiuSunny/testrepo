@@ -1,21 +1,15 @@
-name: "Hello World Action"
-description: "A simple example GitHub Action"
-author: "Your Name"
+name: "Hello Action"
+description: "A simple custom GitHub Action example"
 
 inputs:
   name:
-    description: "Name to greet"
+    description: "Name of the user"
     required: true
-    default: "Rui"
-
-outputs:
-  greeting:
-    description: "The greeting message"
+    default: "World"
 
 runs:
-  using: "node20"
-  main: "index.js"
-
-branding:
-  icon: "smile"
-  color: "blue"
+  using: "composite"
+  steps:
+    - name: Say hello
+      shell: bash
+      run: echo "Hello, ${{ inputs.username }}!"

@@ -9,13 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run custom Hello World action
         id: greet_step
         uses: ./.github/actions/hello-world
         with:
           name: Rui
-
-      - name: Display output from custom action
-        run: echo "The action said ${{ steps.greet_step.outputs.greeting }}"
